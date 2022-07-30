@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const student = ["shamim", 55, "shobuj"];
+
+    interface Person {
+        name: string;
+        age?: number;
+        isActive: boolean;
+        isEmployed?: string | boolean;
+    }
+
+    const user: Person = {
+        name: "Shamim Reza",
+        age: 25,
+        isActive: false,
+    };
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                
+                <h4>Name: {user.name}</h4>
+                <h5>Age: {user?.age}</h5>
+                <h5>Status: {user.isActive ? "Active" : "Inactive"}</h5>
+            </header>
+        </div>
+    );
 }
 
 export default App;
